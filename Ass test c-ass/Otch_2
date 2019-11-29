@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+
+int main()
+{
+   unsigned short int a;
+    unsigned short int b;
+    unsigned short int c;
+    unsigned short int y;
+    scanf ("%hu%hu%hu",&a,&b,&c);
+    int e=0;
+   printf("b^2-4ac=%i\n", e=b*b-4*a*c);
+
+    __asm
+    {
+        mov ax,b
+        mul b
+
+        mov b,ax
+        mov ax,a
+        mov cl,4
+        mul cl
+        mul c
+        mov bx,b
+        sub bx,ax
+        mov y,bx
+    }
+    printf("b^2-4ac=%hu\n",y);
+     printf("Проверка:b^2-4ac = %i\n", e);
+    
+    return 0;
+}
+
