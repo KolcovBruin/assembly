@@ -45,14 +45,14 @@ int main()
                    jl nc
     l:
    na: mov a,0
-        cmp a,ax
-        jne f
+        //cmp a,ax
+        jmp f
    nb: mov b,0
-        cmp b,ax
-        jne f
+       // cmp b,ax
+        jmp f
    nc: mov c,0
-        cmp c,ax
-        jne f
+       // cmp c,ax
+        jmp f
     f: nop
     
   }
