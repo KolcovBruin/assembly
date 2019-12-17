@@ -11,30 +11,28 @@ int main()
     short int mas[N];
    for(int i=0;i<N;i++)
         {
-            mas[i]=-30+rand()%70;
+            mas[i]=30+rand()%70;
             printf("%i  ",mas[i]);
         }
     
     __asm
     {
-        mov dh,N
-        xor dl,dl
-        lea rbx, mas
-        mov ax, [rbx]
-        cmp ax,0
-        jl end
+         mov dh,N
+        // inc dh
+         xor dl,dl
+         lea rbx, mas
     next:
-        
-        inc dl
-        dec dh
         cmp dh,0
         jz end
-        inc rbx
-        inc rbx
         mov ax, [rbx]
         cmp ax,0
+        dec dh
         jl end
+        inc dl
+        inc rbx
+        inc rbx
         jmp next
+        
     end:
         mov Y,dl
     }
