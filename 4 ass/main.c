@@ -25,8 +25,8 @@ int main()
         cmp dh,0
         jz end
         mov ax, [rbx]
-        cmp ax,0
         dec dh
+        cmp ax,0
         jl end
         inc dl
         inc rbx
